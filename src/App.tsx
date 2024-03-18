@@ -1,38 +1,42 @@
-import * as React from "react"
 import {
   ChakraProvider,
   Box,
-  Text,
-  Link,
-  VStack,
-  Code,
   Grid,
   theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+  GridItem,
+  Center,
+  Flex,
+  Square,
+  Text,
+  Input,
+} from "@chakra-ui/react";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
+    <Box>
+      <Grid textAlign="center">
+        <GridItem fontSize="xx-large">
+          <h1>User Details</h1>
+        </GridItem>
       </Grid>
+
+      <form method="post">
+        <Flex color="white" width="100%">
+          <Box color="black" width="100%" fontSize={"x-large"}>
+            <h2>Basic Details</h2>
+          </Box>
+        </Flex>
+        <Flex color="white" width="100%" gap={6}>
+          <Box color="black" width="100%">
+            <Text>First Name</Text>
+            <Input placeholder="Basic usage" />
+          </Box>
+          <Box color="black" width="100%">
+            <Text>Last Name</Text>
+            <Input placeholder="Basic usage" />
+          </Box>
+        </Flex>
+      </form>
     </Box>
   </ChakraProvider>
-)
+);
